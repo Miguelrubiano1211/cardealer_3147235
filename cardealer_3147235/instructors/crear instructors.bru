@@ -1,0 +1,26 @@
+meta {
+  name: crear instructors
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:3000/instructors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  { 
+              "id": 3, 
+              "name": "juan perez", 
+              "age": "20" ,
+              "email": "hola@gmail.com",
+              "createdAt": "2025-01-01"           
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}

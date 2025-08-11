@@ -1,0 +1,15 @@
+meta {
+  name: borrar instructors
+  type: http
+  seq: 6
+}
+
+delete {
+  url: http://localhost:3000/instructors/2
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

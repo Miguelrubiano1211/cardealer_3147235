@@ -1,0 +1,26 @@
+meta {
+  name: actualizar instructors
+  type: http
+  seq: 6
+}
+
+patch {
+  url: http://localhost:3000/instructors
+  body: json
+  auth: inherit
+}
+
+body:json {
+  { 
+              "id": 3, 
+              "name": "max perez", 
+              "age": "80" ,
+              "email": "holamundo2025@gmail.com",
+              "createdAt": "2025-02-02"           
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}

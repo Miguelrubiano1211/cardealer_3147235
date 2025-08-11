@@ -1,8 +1,8 @@
 import { Controller, Get, Post, Patch, Delete, Param, Body } from '@nestjs/common';
-import { StudentserviceService } from './studentservice.service';
+import { instructorserviceService } from './instructorservice.service';
 
-@Controller('students')
-export class StudentsController {
+@Controller('instructors')
+export class instructorsController {
 
    //endpoint: punto de entrada
     // que otro proyecto va a utilizar
@@ -17,34 +17,34 @@ export class StudentsController {
     //inyectar un componente para uso en tro
     //sin tener que instanciarlo
 
-    constructor(private readonly studentservices: StudentserviceService) {}
+    constructor(private readonly instructorservices: instructorserviceService) {}
 
 
 
     @Get()
-    consultarStudents() {
-       return this.studentservices.findAll();
+    consultarinstructors() {
+       return this.instructorservices.findAll();
     }
 
     @Post()
-    crearStudents(@Body() body){
+    crearinstructors(@Body() body){
 
-        return this.studentservices.create(body);
+        return this.instructorservices.create(body);
     }
 
 
     @Get()
     findAll() {
-        return this.studentservices.findAll();
+        return this.instructorservices.findAll();
     }
 
 
 
     //consultar un resource por id 
-    //un student por id
+    //un instructors por id
     @Get(`:id`)
     findOne(@Param(`id`) id: number) {
-        return this.studentservices.findOne(+id);
+        return this.instructorservices.findOne(+id);
     }
     
 
@@ -61,7 +61,7 @@ export class StudentsController {
 
         return {
             "success": true,
-            "massage": this.studentservices.remove(+id),
+            "massage": this.instructorservices.remove(+id),
             "message": `Estudiante con id ${id} eliminado`
         }
         

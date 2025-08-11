@@ -5,8 +5,13 @@ import { CustomersModule } from './customers/customers.module';
 import { VendorsModule } from './vendors/vendors.module';
 import { StudentsModule } from './students/students.module';
 
+import { instructorsModule } from './instructors/instructors.module';
+import { instructorsController } from './instructors/instructors.controller';
+
+
+
 @Module({
-  imports: [CustomersModule, VendorsModule, StudentsModule],
+  imports: [CustomersModule, VendorsModule, StudentsModule , instructorsModule],
   controllers: [AppController],
   providers: [AppService],
 })

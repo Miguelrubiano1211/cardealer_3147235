@@ -1,0 +1,15 @@
+meta {
+  name: crear estudiante
+  type: http
+  seq: 2
+}
+
+patch {
+  url: http://localhost:3000/students/50
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
