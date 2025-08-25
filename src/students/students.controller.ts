@@ -23,9 +23,12 @@ export class StudentsController {
 
     @Get()
     consultarStudents() {
-       return this.studentservices.findAll();
+    return this.studentservices.findAll();
     }
 
+}
+
+/*
     @Post()
     crearStudents(@Body() body){
 
@@ -71,3 +74,4 @@ export class StudentsController {
 
 
 }
+*/
