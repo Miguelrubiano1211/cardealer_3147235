@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { create } from 'domain';
 import { students } from './entities/students.entities';
-import { PrismaService } from 'prisma/prismaService';
+import { PrismaService } from 'src/prisma/prismaService';
 
 
 
