@@ -33,8 +33,11 @@ export class StudentserviceService {
     //buscar el student por id
     
 
-    findOne(id:number){
+    async findOne(id:number){
     //busco el student por id
+    return await this.prisma.students.findFirst({
+        where: {id_students:id}
+    })
 
 }
 

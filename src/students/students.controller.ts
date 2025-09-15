@@ -26,7 +26,19 @@ export class StudentsController {
     return this.studentservices.findAll();
     }
 
+
+        //consultar un resource por id 
+    //un student por id
+    @Get(`:id`)
+    findOne(@Param(`id`) id: number) {
+        return this.studentservices.findOne(+id);
+    }
+    
 }
+
+
+
+
 
 /*
     @Post()
@@ -43,13 +55,7 @@ export class StudentsController {
 
 
 
-    //consultar un resource por id 
-    //un student por id
-    @Get(`:id`)
-    findOne(@Param(`id`) id: number) {
-        return this.studentservices.findOne(+id);
-    }
-    
+
 
 
     @Patch(`:id`)
