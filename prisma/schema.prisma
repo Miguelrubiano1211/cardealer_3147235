@@ -10,8 +10,8 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 
@@ -20,7 +20,7 @@ datasource db {
 model students{
 
   id_students Int @id @default(autoincrement())
-  name_students String @db.VarChar(60)
+  name_students String 
   instructores instructor[]
 
 }
@@ -29,14 +29,37 @@ model students{
 model instructor{
 
   id Int @id @default(autoincrement())
-  plate String @db.VarChar(6)
-  realse_date DateTime @db.Date
+  plate String 
+  realse_date DateTime 
   is_available Boolean @default(true)
-  price Decimal @db.Decimal(10,2)
+  price Decimal 
   student_id Int
   student students @relation(fields: [student_id] , references: [id_students])
 
 
 
+
+}
+
+
+
+model estado{
+id Int @id @default(autoincrement())
+estado String
+usuario usuario[]
+
+
+
+}
+
+
+
+
+model usuario{
+  id Int @id @default(autoincrement())
+  username String  @unique
+  password String 
+  estado_id Int @default(1)
+  estado estado @relation(fields:[estado_id],references: [id])
 
 }
