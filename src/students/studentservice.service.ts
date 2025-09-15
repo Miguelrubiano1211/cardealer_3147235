@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { create } from 'domain';
 import { students } from './entities/students.entities';
 import { PrismaService } from 'src/prisma/prismaService';
+import { crearStudentsDto } from './create-students.dto';
 
 
 
@@ -45,8 +46,15 @@ export class StudentserviceService {
 
 
     //crear un student
-    create( ){
+    async create(newStudents:crearStudentsDto ){
+        return await this.prisma.students.create({
+        
+            data:{
+                name_students:newStudents.plate
+            }
 
+
+        })
     }
 
 

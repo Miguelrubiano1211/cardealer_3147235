@@ -1,0 +1,23 @@
+meta {
+  name: crear un students
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:3000/students/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name":"volvo"
+    
+    
+  }
+}
+
+settings {
+  encodeUrl: true
+}

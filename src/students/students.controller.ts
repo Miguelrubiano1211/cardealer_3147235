@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Patch, Delete, Param, Body } from '@nestjs/common';
 import { StudentserviceService } from './studentservice.service';
+import { crearStudentsDto } from './create-students.dto';
 
 @Controller('students')
 export class StudentsController {
@@ -27,6 +28,14 @@ export class StudentsController {
     }
 
 
+
+    // este espacio es para crear un students 
+    @Post()
+    create(@Body()newStudents:crearStudentsDto){
+        return this.studentservices.create(newStudents);
+    }
+
+
         //consultar un resource por id 
     //un student por id
     @Get(`:id`)
@@ -41,11 +50,7 @@ export class StudentsController {
 
 
 /*
-    @Post()
-    crearStudents(@Body() body){
 
-        return this.studentservices.create(body);
-    }
 
 
     @Get()
